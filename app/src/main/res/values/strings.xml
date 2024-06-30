@@ -11,4 +11,5 @@
     <string name="please_enter_valid_amount">Please enter valid amount</string>
     <string name="loading">Loading…</string>
     <string name="applying_discount_for">Applying Discount For</string>
+    <string name="finding_discount">Finding Discount…</string>
 </resources>

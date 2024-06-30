@@ -45,15 +45,9 @@ class ApplyDiscountActivity : AppCompatActivity() {
 
     override fun onResume() {
         super.onResume()
-        var dialogMsg = getString(R.string.applying_discount_for) + "\n**** **** **** "
-        dialogMsg += if (cardId.length > 3) {
-            cardId.substring(cardId.length - 4)
-        } else {
-            cardId
-        }
         DialogHelper.showLoadingDialog(
             this@ApplyDiscountActivity,
-            dialogMsg
+            getString(R.string.finding_discount)
         )
         LoyaltyApp.getInstance().runOnUiThreadWithDelay({
             LoyaltyApp.getInstance().runOnBackgroundThreadWithCallback({
@@ -80,6 +74,20 @@ class ApplyDiscountActivity : AppCompatActivity() {
 
         discountAmount = Utility.formatAmount(discountAmount)
 
+        if (discountAmount > 0) {
+            var dialogMsg = getString(R.string.applying_discount_for) + "\n**** **** **** "
+            dialogMsg += if (cardId.length > 3) {
+                cardId.substring(cardId.length - 4)
+            } else {
+                cardId
+            }
+
+            DialogHelper.showLoadingDialog(
+                this@ApplyDiscountActivity,
+                dialogMsg
+            )
+        }
+
         transactionAmount -= discountAmount
         if (transactionAmount < 0) {
             transactionAmount = 0.0f
@@ -87,11 +95,13 @@ class ApplyDiscountActivity : AppCompatActivity() {
     }
 
     private fun sendDiscountResult() {
-        val resultIntent = Intent()
-        resultIntent.putExtra(Constants.DISCOUNT_AMOUNT, discountAmount)
-        resultIntent.putExtra(Constants.TRANSACTION_AMOUNT, transactionAmount)
-        setResult(RESULT_OK, resultIntent)
-        finish() // Finish the activity and return to Payment Application
+        LoyaltyApp.getInstance().runOnUiThreadWithDelay({
+            val resultIntent = Intent()
+            resultIntent.putExtra(Constants.DISCOUNT_AMOUNT, discountAmount)
+            resultIntent.putExtra(Constants.TRANSACTION_AMOUNT, transactionAmount)
+            setResult(RESULT_OK, resultIntent)
+            finish() // Finish the activity and return to Payment Application
+        }, 1000) // Simulate a delay of 1 second
     }
 
     override fun finish() {
