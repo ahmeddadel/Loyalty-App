@@ -6,7 +6,8 @@ package com.zeal.loyaltyapplication.utils
  * @author adell
  */
 object Constants {
-    const val LOYALTY_SHARED_PREFERENCES_FILE_NAME = "loyalty_preferences" // Shared preferences file name
+    const val LOYALTY_SHARED_PREFERENCES_FILE_NAME =
+        "loyalty_preferences" // Shared preferences file name
 
     const val DISCOUNT_FIXED = "fixed" // Fixed discount amount
     const val DISCOUNT_PERCENTAGE = "percentage" // Percentage discount amount

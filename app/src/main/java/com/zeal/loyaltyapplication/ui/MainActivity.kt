@@ -4,11 +4,9 @@ import android.os.Bundle
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import com.zeal.loyaltyapplication.LoyaltyApp
-import com.zeal.loyaltyapplication.R
 import com.zeal.loyaltyapplication.databinding.ActivityMainBinding
 import com.zeal.loyaltyapplication.utils.Constants
 import com.zeal.loyaltyapplication.utils.DialogHelper
-import com.zeal.loyaltyapplication.utils.Utility
 
 class MainActivity : AppCompatActivity() {
 
