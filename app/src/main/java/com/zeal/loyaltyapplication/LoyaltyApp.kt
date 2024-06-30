@@ -15,6 +15,7 @@ import java.util.concurrent.Executors
  */
 class LoyaltyApp : Application() {
 
+    private lateinit var handler: Handler
     private lateinit var backgroundExecutor: ExecutorService
 
     override fun onCreate() {
@@ -53,7 +54,6 @@ class LoyaltyApp : Application() {
 
     companion object {
         private lateinit var instance: LoyaltyApp // application instance
-        private lateinit var handler: Handler
 
         @Volatile
         private var sharedPreferencesInstance: SharedPreferences? =
