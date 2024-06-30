@@ -4,6 +4,7 @@ import android.app.Application
 import android.content.Context
 import android.content.SharedPreferences
 import android.os.Handler
+import android.os.Looper
 import com.zeal.loyaltyapplication.utils.Constants.LOYALTY_SHARED_PREFERENCES_FILE_NAME
 import java.util.concurrent.ExecutorService
 import java.util.concurrent.Executors
@@ -22,7 +23,7 @@ class LoyaltyApp : Application() {
         super.onCreate()
 
         instance = this
-        handler = Handler()
+        handler = Handler(Looper.getMainLooper())
         backgroundExecutor =
             Executors.newFixedThreadPool(10) { runnable -> // create a new thread pool
                 val thread = Thread(runnable, "Background executor service")
