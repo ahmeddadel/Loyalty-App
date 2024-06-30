@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/zeal_blue"
+    tools:context=".ui.MainActivity">
+
+    <ImageView
+        android:id="@+id/iv_logo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_zeal_logo"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.2"
+        tools:ignore="ContentDescription" />
+
+    <TextView
+        android:id="@+id/tv_discount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/discount"
+        android:textColor="@color/white"
+        android:textSize="28sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/iv_logo"
+        app:layout_constraintVertical_bias=".2" />
+
+    <TextView
+        android:id="@id/tv_discount_amount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="6dp"
+        android:textColor="@color/white"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="@id/tv_discount"
+        app:layout_constraintStart_toStartOf="@id/tv_discount"
+        app:layout_constraintTop_toBottomOf="@id/tv_discount"
+        tools:text="0%" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btn_set_discount"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="20dp"
+        android:text="@string/set_discount_amount"
+        android:textAllCaps="false"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@id/tv_discount"
+        app:layout_constraintStart_toStartOf="@id/tv_discount"
+        app:layout_constraintTop_toBottomOf="@+id/tv_discount_amount"
+        app:layout_constraintVertical_bias=".2" />
+
+    <androidx.appcompat.widget.SwitchCompat
+        android:id="@+id/sw_discount_type"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:checked="false"
+        android:padding="12dp"
+        android:scaleX="1.25"
+        android:scaleY="1.25"
+        android:textColor="@color/white"
+        android:textOff="@string/fixed"
+        android:textOn="@string/percentage"
+        app:layout_constraintEnd_toEndOf="@id/tv_discount"
+        app:layout_constraintStart_toStartOf="@id/tv_discount"
+        app:layout_constraintTop_toBottomOf="@id/btn_set_discount"
+        app:showText="false"
+        app:thumbTint="@color/zeal_green"
+        app:trackTint="@color/white" />
+
+    <TextView
+        android:id="@+id/tv_sw_off"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/fixed"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="@id/sw_discount_type"
+        app:layout_constraintEnd_toStartOf="@id/sw_discount_type"
+        app:layout_constraintTop_toTopOf="@id/sw_discount_type" />
+
+    <TextView
+        android:id="@+id/tv_sw_on"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/percentage"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="@id/sw_discount_type"
+        app:layout_constraintStart_toEndOf="@id/sw_discount_type"
+        app:layout_constraintTop_toTopOf="@id/sw_discount_type" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">Loyalty Application</string>
+    <string name="discount">Discount</string>
+    <string name="set_discount_amount">Set Discount Amount</string>
+    <string name="percentage">Percentage</string>
+    <string name="fixed">Fixed</string>
+    <string name="enter_discount_amount">Enter Discount Amount</string>
+    <string name="discount_amount_hint">23.45</string>
+    <string name="submit">Submit</string>
+    <string name="cancel">Cancel</string>
+    <string name="please_enter_valid_amount">Please enter valid amount</string>
+    <string name="loading">Loading…</string>
+    <string name="applying_discount_for">Applying Discount For</string>
+</resources>
